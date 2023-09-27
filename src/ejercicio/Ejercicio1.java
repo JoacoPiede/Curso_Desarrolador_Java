@@ -17,7 +17,7 @@ public class Ejercicio1 {
 
         int numeroInicio = 5;
         
-        int numeroFin = 12;
+        int numeroFin = 20;
         
         System.out.println("Inicia el item A del Ejercicio 1");
         
