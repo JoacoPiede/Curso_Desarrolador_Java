@@ -17,9 +17,9 @@ public class Ejercicio1 {
 
         int numeroInicio = 5;
         
-        int numeroFin = 14;
+        int numeroFin = 13;
         
-        System.out.println("Inicia el item del Ejercicio 1A");
+        System.out.println("Inicia el item A del Ejercicio 1");
         
         while(numeroInicio <= numeroFin) {	
         	System.out.println(numeroInicio);
