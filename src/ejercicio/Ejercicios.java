@@ -7,7 +7,7 @@ public class Ejercicios {
 /*  a. Utilizando la sentencia while, imprima todos los números entre 2 variables “a”
 	y “b”. Su código puede arrancar (por ejemplo):*/
         int numeroInicio1 = 5;
-        int numeroFin1 = 15;
+        int numeroFin1 = 20;
         imprimirNumeros(numeroInicio1, numeroFin1);
 
         // Ejercicio 1b
