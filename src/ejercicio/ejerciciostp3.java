@@ -1,6 +1,6 @@
 package ejercicio;
 
-public class ejerciciostp3 {
+public class ejercicios3 {
     public static void main(String[] args) {
         // Ejercicio 1a: Contar apariciones de una letra en un String
         String cadena = "hola que tal";
@@ -10,9 +10,14 @@ public class ejerciciostp3 {
 
         // Ejercicio 1b: Ordenar números en ascendente o descendente
         int[] numeros = {3, 1, 2};
-        int[] numerosOrdenados = ordenarNumeros(numeros, true); // true para ascendente, false para descendente
-        System.out.print("Ejercicio 1b: Números ordenados: ");
-        imprimirArray(numerosOrdenados);
+        int[] numerosOrdenadosAscendente = ordenarNumeros(numeros, true);
+        int[] numerosOrdenadosDescendente = ordenarNumeros(numeros, false);
+
+        System.out.print("Ejercicio 1b (Ascendente): ");
+        imprimirArray(numerosOrdenadosAscendente);
+
+        System.out.print("Ejercicio 1b (Descendente): ");
+        imprimirArray(numerosOrdenadosDescendente);
 
         // Ejercicio 1c: Sumar números mayores que X en un vector
         int x = 2;
@@ -24,8 +29,10 @@ public class ejerciciostp3 {
     // Ejercicio 1a: Contar apariciones de una letra en un String
     public static int contarLetra(String cadena, char letra) {
         int contador = 0;
+        char letraMinuscula = Character.toLowerCase(letra); // Convertir letra a minúscula
         for (int i = 0; i < cadena.length(); i++) {
-            if (cadena.charAt(i) == letra) {
+            char caracter = Character.toLowerCase(cadena.charAt(i)); // Convertir caracter a minúscula
+            if (caracter == letraMinuscula) {
                 contador++;
             }
         }
@@ -35,19 +42,16 @@ public class ejerciciostp3 {
     // Ejercicio 1b: Ordenar números en ascendente o descendente
     public static int[] ordenarNumeros(int[] numeros, boolean ascendente) {
         int[] numerosOrdenados = copiarArray(numeros);
-        if (ascendente) {
-            for (int i = 0; i < numerosOrdenados.length - 1; i++) {
-                for (int j = 0; j < numerosOrdenados.length - i - 1; j++) {
+
+        for (int i = 0; i < numerosOrdenados.length - 1; i++) {
+            for (int j = 0; j < numerosOrdenados.length - i - 1; j++) {
+                if (ascendente) {
                     if (numerosOrdenados[j] > numerosOrdenados[j + 1]) {
                         int temp = numerosOrdenados[j];
                         numerosOrdenados[j] = numerosOrdenados[j + 1];
                         numerosOrdenados[j + 1] = temp;
                     }
-                }
-            }
-        } else {
-            for (int i = 0; i < numerosOrdenados.length - 1; i++) {
-                for (int j = 0; j < numerosOrdenados.length - i - 1; j++) {
+                } else {
                     if (numerosOrdenados[j] < numerosOrdenados[j + 1]) {
                         int temp = numerosOrdenados[j];
                         numerosOrdenados[j] = numerosOrdenados[j + 1];
